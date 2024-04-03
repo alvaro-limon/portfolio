@@ -22,11 +22,11 @@ function App() {
                 <BrowserRouter>
                     <Paper sx={{height:'100%', width:'100%', flex:1, display:'flex', flexDirection:'column', rowGap:2, padding:2, overflowY:'scroll', '&::-webkit-scrollbar':{display: 'none'}, '& scrollbar, & * scrollbar': {display: 'none'},}}>
                         <Routes>
-                            <Route path='/' element={<HomePage/>}/>
-                            <Route path='/work' element={<WorkPage/>} />
-                            <Route path='/projects' element={<ProjectsPage/>} />
-                            <Route path='/contact' element={<ContactPage/>} />     
-                            <Route path='/post' element={<PostPagePostExperienceComponent/>}/>
+                            <Route path='/portfolio/' element={<HomePage/>}/>
+                            <Route path='/portfolio/work' element={<WorkPage/>} />
+                            <Route path='/portfolio/projects' element={<ProjectsPage/>} />
+                            <Route path='/portfolio/contact' element={<ContactPage/>} />     
+                            <Route path='/portfolio/post' element={<PostPagePostExperienceComponent/>}/>
                         </Routes>
                     </Paper>
                     <Paper sx={{width:'100%', position:'sticky', bottom:0, left:'0', right:'0', zIndex:'1'}}>

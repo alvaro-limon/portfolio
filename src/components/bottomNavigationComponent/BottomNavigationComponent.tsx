@@ -38,39 +38,39 @@ function BottomNavigationComponent() {
         <BottomNavigation sx={{width:'100%', bgcolor:'transparent'}} value={value} onChange={() => {handleChange}}>
             <BottomNavigationAction 
                 label="Home"
-                value="/"
+                value="/portfolio/"
                 icon={<HomeOutlined/>}
                 sx={sxNavItems}
                 
                 component={Link}
-                to={'/'}
+                to={'/portfolio/'}
             />
             <BottomNavigationAction 
                 label="Work"
-                value="/work"
+                value="/portfolio/work"
                 icon={<WorkOutline/>}
                 sx={sxNavItems}
 
                 component={Link}
-                to={'/work'}
+                to={'/portfolio/work'}
             />
             <BottomNavigationAction 
                 label="Projects"
-                value="/projects"
+                value="/portfolio/projects"
                 icon={<SchoolOutlined/>}
                 sx={sxNavItems}
 
                 component={Link}
-                to={'/projects'}
+                to={'/portfolio/projects'}
             />
             <BottomNavigationAction 
                 label="Contact"
-                value="/contact"
+                value="/portfolio/contact"
                 icon={<AccountCircleOutlined/>}
                 sx={sxNavItems}
 
                 component={Link}
-                to={'/contact'}
+                to={'/portfolio/contact'}
             />
         </BottomNavigation>
     </Paper>
