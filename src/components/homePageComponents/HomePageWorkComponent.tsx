@@ -22,7 +22,7 @@ function HomePageWorkComponent() {
                 <WorkOutline sx={{color:'text.secondary'}}/>
                 <Typography variant='subtitle1' color={'text.secondary'} lineHeight={1}>Work</Typography>
             </Box>
-            <Button variant='outlined' sx={goToButtonStyles} onClick={() => {navigate('/work')}}>
+            <Button variant='outlined' sx={goToButtonStyles} onClick={() => {navigate('/portfolio/work')}}>
                 View
                 <ArrowForwardOutlined sx={{color:'text.secondary'}}/>
             </Button>

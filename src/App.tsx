@@ -1,4 +1,4 @@
-import { Container, CssBaseline, Paper, ThemeProvider } from '@mui/material';
+import { Container, CssBaseline, Paper, ThemeProvider, useMediaQuery } from '@mui/material';
 import './App.css';
 //import { ExperiencesContext } from './providers/experiencesProvider/ExperiencesProvider'
 import { Theme1 } from './themes/Theme1'
@@ -15,12 +15,16 @@ function App() {
     //const [experiencesContextValue, setExperiencesContextValue] = useState(false);
     //const experiencesContextValueGroup = {experiencesContextValue, setExperiencesContextValue};
 
+    // Responsive
+    const isMobile = useMediaQuery(Theme1.breakpoints.down('tablet'));
+    const isSmallerThanDesktop = useMediaQuery(Theme1.breakpoints.down('desktop'));
+
     return (
         <ThemeProvider theme={Theme1}>
             <CssBaseline/>
-            <Container maxWidth="desktop" sx={{height:'100vh', display:'flex', flexDirection:'column', justifyContent:'space-between', alignItems:'center', bgcolor:'background.default', padding:1, rowGap:1, }}>
+            <Container maxWidth="desktop" sx={{height:'100dvh', display:'flex', flexDirection:'column', justifyContent:'space-between', alignItems:'center', bgcolor:'background.default', padding:1, rowGap:1, }}>
                 <BrowserRouter>
-                    <Paper sx={{height:'100%', width:'100%', flex:1, display:'flex', flexDirection:'column', rowGap:2, padding:2, overflowY:'scroll', '&::-webkit-scrollbar':{display: 'none'}, '& scrollbar, & * scrollbar': {display: 'none'},}}>
+                    <Paper sx={{height:'calc(100dvh - 80px)', width:'100%', display:'flex', flexDirection:'column', rowGap:2, padding:2, overflowY:'scroll', '&::-webkit-scrollbar':{display: 'none'}, '& scrollbar, & * scrollbar': {display: 'none'},}}>
                         <Routes>
                             <Route path='/portfolio/' element={<HomePage/>}/>
                             <Route path='/portfolio/work' element={<WorkPage/>} />
@@ -29,7 +33,7 @@ function App() {
                             <Route path='/portfolio/post' element={<PostPagePostExperienceComponent/>}/>
                         </Routes>
                     </Paper>
-                    <Paper sx={{width:'100%', position:'sticky', bottom:0, left:'0', right:'0', zIndex:'1'}}>
+                    <Paper sx={{...(!isMobile && {width:'calc(1200px - 16px)'}), ...(isSmallerThanDesktop && {width:'calc(100% - 16px)'}), ...(isMobile && {width:'calc(100% - 16px)'}), justifySelf:'center', position:'fixed', bottom:0, left:'0', right:'0', zIndex:'1', margin:1}}>
                         <BottomNavigationComponent/>
                     </Paper>
                 </BrowserRouter>

@@ -21,7 +21,7 @@ function HomePageProjectsComponent() {
                 <SchoolOutlined sx={{color:'text.secondary'}}/>
                 <Typography variant='subtitle1' color={'text.secondary'} lineHeight={1}>Projects</Typography>
             </Box>
-            <Button variant='outlined' sx={goToButtonStyles} component={Link} to="/projects">
+            <Button variant='outlined' sx={goToButtonStyles} component={Link} to="/portfolio/projects">
                 View
                 <ArrowForwardOutlined sx={{color:'text.secondary'}}/>
             </Button>
